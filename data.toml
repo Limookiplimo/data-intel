@@ -1,0 +1,490 @@
+[customers]
+
+    [[customers.customer]]
+    crm = "CRM001"
+    phone = 254712345678
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM002"
+    phone = 254712345677
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM003"
+    phone = 254712345676
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM004"
+    phone = 254712345675
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM005"
+    phone = 254712345674
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM006"
+    phone = 254712345669
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM007"
+    phone = 254712345673
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM008"
+    phone = 254712345672
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM009"
+    phone = 254712345671
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM010"
+    phone = 254712345670
+    route = "Tena"
+
+    [[customers.customer]]
+    crm = "CRM011"
+    phone = 254712345668
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM012"
+    phone = 254712345667
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM013"
+    phone = 254712345666
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM014"
+    phone = 254712345665
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM015"
+    phone = 254712345664
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM016"
+    phone = 254712345663
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM017"
+    phone = 254712345662
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM018"
+    phone = 254712345661
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM019"
+    phone = 254712345660
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM020"
+    phone = 254712345659
+    route = "Innercore"
+
+    [[customers.customer]]
+    crm = "CRM021"
+    phone = 254712345658
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM022"
+    phone = 254712345657
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM023"
+    phone = 254712345656
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM024"
+    phone = 254712345655
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM025"
+    phone = 254712345654
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM026"
+    phone = 254712345653
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM027"
+    phone = 254712345652
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM028"
+    phone = 254712345651
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM029"
+    phone = 254712345650
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM030"
+    phone = 254712345649
+    route = "Umoja1"
+
+    [[customers.customer]]
+    crm = "CRM031"
+    phone = 254712345648
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM032"
+    phone = 254712345647
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM033"
+    phone = 254712345646
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM034"
+    phone = 254712345645
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM035"
+    phone = 254712345644
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM036"
+    phone = 254712345643
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM037"
+    phone = 254712345642
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM038"
+    phone = 254712345641
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM039"
+    phone = 254712345640
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM040"
+    phone = 254712345639
+    route = "Umoja2"
+
+    [[customers.customer]]
+    crm = "CRM041"
+    phone = 254712345638
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM042"
+    phone = 254712345637
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM043"
+    phone = 254712345636
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM044"
+    phone = 254712345635
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM045"
+    phone = 254712345634
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM046"
+    phone = 254712345633
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM047"
+    phone = 254712345632
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM048"
+    phone = 254712345631
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM049"
+    phone = 254712345630
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM050"
+    phone = 254712345629
+    route = "Donholm1"
+
+    [[customers.customer]]
+    crm = "CRM051"
+    phone = 254712345628
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM052"
+    phone = 254712345627
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM053"
+    phone = 254712345626
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM054"
+    phone = 254712345625
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM055"
+    phone = 254712345624
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM056"
+    phone = 254712345623
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM057"
+    phone = 254712345622
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM058"
+    phone = 254712345621
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM059"
+    phone = 254712345620
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM060"
+    phone = 254712345619
+    route = "Donholm2"
+
+    [[customers.customer]]
+    crm = "CRM061"
+    phone = 254712345618
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM062"
+    phone = 254712345617
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM063"
+    phone = 254712345616
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM064"
+    phone = 254712345615
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM065"
+    phone = 254712345614
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM066"
+    phone = 254712345613
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM067"
+    phone = 254712345612
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM068"
+    phone = 254712345611
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM069"
+    phone = 254712345610
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM070"
+    phone = 254712345609
+    route = "Tassia1"
+
+    [[customers.customer]]
+    crm = "CRM071"
+    phone = 254712345608
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM072"
+    phone = 254712345607
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM073"
+    phone = 254712345606
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM074"
+    phone = 254712345605
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM075"
+    phone = 254712345604
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM076"
+    phone = 254712345603
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM077"
+    phone = 254712345602
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM078"
+    phone = 254712345601
+    route = "Tassia2"
+
+    [[customers.customer]]
+    crm = "CRM079"
+    phone = 254712345600
+    route = "Tassia2"
+
+
+[routes]
+
+    [[routes.route]]
+    location = "Umoja"
+    longitude = 36.8906
+    latitude = -1.2822
+    name = "Tena"
+
+    [[routes.route]]
+    location = "Umoja"
+    longitude = 36.8906
+    latitude = -1.2822
+    name = "Umoja1"
+
+    [[routes.route]]
+    location = "Umoja"
+    longitude = 36.8906
+    latitude = -1.2822
+    name = "Umoja2"
+
+    [[routes.route]]
+    location = "Umoja"
+    longitude = 36.8906
+    latitude = -1.2822
+    name = "Innercore"
+
+    [[routes.route]]
+    location = "Donholm"
+    longitude = 36.8961
+    latitude = -1.2960
+    name = "Donholm1"
+
+    [[routes.route]]
+    location = "Donholm"
+    longitude = 36.8961
+    latitude = -1.2960
+    name = "Donholm2"
+
+    [[routes.route]]
+    location = "Tassia"
+    longitude = 36.8929
+    latitude = -1.3077
+    name = "Tassia1"
+
+    [[routes.route]]
+    location = "Tassia"
+    longitude = 36.8929
+    latitude = -1.3077
+    name = "Tassia2"
+
+
+[markets]
+
+    [[markets.market]]
+    name = 
+    market_day =
+    route = "Tena"
+
+    [[markets.market]]
+    name =
+    market_day =
+    route = "Umoja1"
+
+    [[markets.market]]
+    name =
+    market_day =
+    route = "Umoja2"
+
+    [[markets.market]]
+    name ="Umoja market"
+    market_day =
+    route = "Innercore"
+
+    [[markets.market]]
+    name =
+    market_day =
+    route = "Donholm1"
+
+    [[markets.market]]
+    name =
+    market_day =
+    route = "Donholm2"
+
+    [[markets.market]]
+    name =
+    market_day =
+    route = "Tassia1"
+
+    [[markets.market]]
+    name =
+    market_day =
+    route = "Tassia2"
