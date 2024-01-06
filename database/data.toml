@@ -504,9 +504,67 @@
     market = "Tassia"
 
 
+[products]
 
+    [[products.product]]
+    p_name = "Ajab homebaking 2kg"
+    p_code = "AJA002"
+    weight = 24
+    price = 2100
 
+    [[products.product]]
+    p_name = "Pembe homebaking 2kg"
+    p_code = "PEM002"
+    weight = 24
+    price = 2050
 
+    [[products.product]]
+    p_name ="Ajab homebaking 1kg"
+    p_code = "AJA001"
+    weight = 24
+    price = 2120
+
+    [[products.product]]
+    p_name ="Pembe homebaking 1kg"
+    p_code = "PEM001"
+    weight = 24
+    price = 2070
+
+    [[products.product]]
+    p_name = "Salit cooking oil 10lt"
+    p_code = "SAL001"
+    weight = 10
+    price = 2500
+
+    [[products.product]]
+    p_name = "Salit cooking oil 20lt"
+    p_code = "SAL002"
+    weight = 20
+    price = 4500
+
+    [[products.product]]
+    p_name ="Fresh fry cooking oil 10lt"
+    p_code = "FRE001"
+    weight = 10
+    price = 2700
+
+    [[products.product]]
+    p_name ="Fresh fry cooking oil 10lt"
+    p_code = "FRE002"
+    weight = 20
+    price = 4700
+
+    [[products.product]]
+    p_name = "Sugar 50kg"
+    p_code = "SUG001"
+    weight = 50
+    price = 6000
+
+    [[products.product]]
+    p_name = "Sugar 25kg"
+    p_code = "SUG002"
+    weight = 25
+    price = 3000
 
 
 
