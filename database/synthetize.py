@@ -14,26 +14,33 @@ products = data["products"]["product"]
 
 def create_table(table_name, columns):
     with psycopg2.connect(dbname="analytics", host="localhost", port=5432, user="db_user", password="user_password") as conn:
-        with conn.cursor as cur:
+        with conn.cursor() as cur:
             cur.execute(f"""
                 create table if not exists {table_name}(
                 {','.join(columns)})""")
 
 def load_table(table_name, data):
-    with psycopg2.connect(dbname="analytics", host="localhost", port=5432, user="db_user", password="userpassword") as conn:
-        with conn.cursor as cur:
+    with psycopg2.connect(dbname="analytics", host="localhost", port=5432, user="db_user", password="user_password") as conn:
+        with conn.cursor() as cur:
             cur.executemany(f"""
                 insert into {table_name} values(
                 {', '.join(['%s'] * len(data[0]))})""", data)
             conn.commit()
 
 def get_last_invoice_number():
-    with psycopg2.connect(dbname="analytics", host="localhost", port=5432, user="db_user", password="userpassword") as conn:
-        with conn.cursor as cur:
+    with psycopg2.connect(dbname="analytics", host="localhost", port=5432, user="db_user", password="user_password") as conn:
+        with conn.cursor() as cur:
             cur.execute("select count(distinct invoice_number) from sales")
             result = cur.fetchone()[0]
             return result if result else 0
 
+def get_sales_data():
+    with psycopg2.connect(dbname="analytics", host="localhost", port=5432, user="db_user", password="user_password") as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT crm, invoice_number, total_weight, invoice_date FROM sales")
+            result = cur.fetchmany()
+            return result
+        
 def generate_sales_data():
     last_invoice_number = get_last_invoice_number()
     new_invoice_number = last_invoice_number + 1
@@ -64,7 +71,7 @@ def generate_sales_data():
                 "total_price FLOAT",
                 "total_weight FLOAT",])
     create_table("invoices", 
-                ["invoice_number VARCHAR(255)",
+                ["invoice_number VARCHAR(255) UNIQUE",
                 "invoice_date DATE",
                 "invoice_time TIME",
                 "product_code VARCHAR(255)",
@@ -87,12 +94,15 @@ def generate_products_data():
     for product_data in products:
         name = product_data.get("p_name", None)
         code = product_data.get("p_code", None)
+        existing_product = next((p for p in products_data if p[1] == code), None)
+        if existing_product:
+            continue
         weight = product_data.get("weight", None)
         price = product_data.get("price", None)
         products_data.append((name,code,weight,price))
     create_table("products",
                  ["name VARCHAR(255)",
-                  "code VARCHAR(255)",
+                  "code VARCHAR(255) UNIQUE",
                   "weight FLOAT",
                   "price FLOAT"])
     load_table("products", products_data)
@@ -101,13 +111,15 @@ def generate_customer_data():
     customers_data = []
     for customer_data in customers:
         crm = customer_data.get("crm", None)
+        if crm in customers_data:
+            continue
         phone = customer_data.get("phone", None)
         route = customer_data.get("route", None)
         customers_data.append((crm, phone, route))
 
     create_table("customers",
-                 ["crm VARCHAR(255)",
-                  "phone INTEGER",
+                 ["crm VARCHAR(255) UNIQUE",
+                  "phone BIGINT UNIQUE",
                   "route VARCHAR(255)"])
     load_table("customers", customers_data)
 
@@ -130,10 +142,10 @@ def generate_markets_data():
         route = market_data.get("route", None)
         longitude = market_data.get("longitude", None)
         latitude = market_data.get("latitude", None)
-        market_data.append((name, route, longitude, latitude))
+        markets_data.append((name, route, longitude, latitude))
 
     create_table("markets",
-                 ["name VARCHAR(255)",
+                 ["name VARCHAR(255) UNIQUE",
                   "route VARCHAR(255)",
                   "longitude FLOAT",
                   "latitude FLOAT"])
@@ -147,8 +159,16 @@ def generate_logistics_data():
         vehicles_data.append((reg_no,tonnage))
 
         create_table("logistics",
-                     ["reg_no VARCHAR(255)",
+                     ["reg_no VARCHAR(255) UNIQUE",
                       "tonnage FLOAT"])
         load_table("logistics", vehicles_data)
+
+
+generate_products_data()
+generate_customer_data()
+generate_reps_data()
+generate_markets_data()
+generate_logistics_data()
+generate_sales_data()
 
 
