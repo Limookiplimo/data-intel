@@ -455,7 +455,7 @@
 
     [[vehicles.vehicle]]
     reg = "KAA002"
-    tonnage = 7
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA003"
@@ -463,31 +463,31 @@
 
     [[vehicles.vehicle]]
     reg = "KAA004"
-    tonnage = 12
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA005"
-    tonnage = 7
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA006"
-    tonnage = 8
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA007"
-    tonnage = 8
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA008"
-    tonnage = 5
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA009"
-    tonnage = 7
+    tonnage = 10
 
     [[vehicles.vehicle]]
     reg = "KAA010"
-    tonnage = 8
+    tonnage = 10
 
 [reps]
 
