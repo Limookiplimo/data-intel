@@ -1,8 +1,8 @@
+from datetime import datetime, timedelta
 import pathlib
 import psycopg2
 import tomli
 import random
-from datetime import datetime, timedelta
 
 DB_CONFIG = {
     "dbname": "analytics",
@@ -99,7 +99,6 @@ def generate_delivery_data():
     for del_data in data:
         invoice_number, invoice_date, total_weight = del_data
         vehicle = logistics[current_vehicle_index]
-
         if current_vehicle_capacity + total_weight <= vehicle["tonnage"] * 1000:
             delivery_data.append((invoice_number, invoice_date, total_weight, vehicle["reg"]))
             current_vehicle_capacity += total_weight
@@ -146,7 +145,6 @@ def generate_invoice_data():
         weight = product["weight"]
         total_price = quantity * price
         total_weight = quantity * weight
-
         invoice_data.append((customer["crm"], invoice_number, invoice_date.date(), invoice_time.time(), product["p_code"], price,
                              quantity, total_price, weight, total_weight))
 
@@ -215,11 +213,10 @@ def generate_logistics_data():
         reg_no = vehicle_data.get("reg",None)
         tonnage = vehicle_data.get("tonnage", None)
         vehicles_data.append((reg_no,tonnage))
-
-        create_table("logistics",
-                     ["reg_no VARCHAR(255) UNIQUE",
+    create_table("logistics",
+                    ["reg_no VARCHAR(255) UNIQUE",
                       "tonnage FLOAT"])
-        load_table("logistics", vehicles_data)
+    load_table("logistics", vehicles_data)
 
 
 generate_products_data()
