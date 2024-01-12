@@ -147,7 +147,6 @@ def generate_invoice_data():
         total_weight = quantity * weight
         invoice_data.append((customer["crm"], invoice_number, invoice_date.date(), invoice_time.time(), product["p_code"], price,
                              quantity, total_price, weight, total_weight))
-
     return invoice_data
 
 def generate_products_data():
