@@ -75,7 +75,6 @@ def create_sales_payments_chart():
     fig_sales_payments.update_layout(plot_bgcolor="rgba(0,0,0,0)", xaxis=(dict(showgrid=False)))
     st.plotly_chart(fig_sales_payments)
     
-
     st.markdown("---")
 
 if __name__ == "__main__":
