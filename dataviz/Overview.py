@@ -12,7 +12,8 @@ DB_CONFIG = {
 }
 
 st.set_page_config(layout="wide")
-st.title("Key Performance Indicators")
+st.markdown("<h1 style='text-align: center; color: green'> ABC Analytics Platform</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Retrospective analysis of ABC performance in the Market</p>", unsafe_allow_html=True)
 
 def connect_db():
     return psycopg2.connect(**DB_CONFIG)
@@ -47,20 +48,21 @@ def calculate_key_performance_indicators():
     total_payments = int(df["payment_amount"].sum())
     pending_payments = int(df["pending_payment"].sum())
     tonnage = int(df["total_weight"].sum())
+    st.header(":blue[Key Performance Indicators]")
     l1, l2, m, r1, r2 = st.columns(5)
     with l1:
         st.subheader("Total Sales:")
-        st.subheader(f"{total_sales:,}")
+        st.subheader(f"$ {total_sales:,}")
     with l2:
         st.subheader("Total Payments:")
-        st.subheader(f"{total_payments:,}")
+        st.subheader(f"$ {total_payments:,}")
     with r1:
         st.subheader("Total Tonnage:")
-        st.subheader(f"{tonnage:,}")
-    with r2:
-        st.subheader("Pending Payments:")
-        st.subheader(f"{pending_payments:,}")
+        st.subheader(f"{tonnage:,} t")
     with m:
+        st.subheader("Pending Payments:")
+        st.subheader(f"$ {pending_payments:,}")
+    with r2:
         st.subheader("Total Invoices:")
         st.subheader(f"{total_invoices:,}")
     
