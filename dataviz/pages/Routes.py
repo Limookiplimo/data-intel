@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px
 from Overview import create_pandas_dataframe
 st.set_page_config(layout="wide")
-st.markdown("<h2 style='text-align: center; color: green'> Trading Routes</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; color: green'> ABC Trading Routes</h1>", unsafe_allow_html=True)
 
 def sales_per_route_chart():
     df = create_pandas_dataframe()
@@ -12,7 +12,7 @@ def sales_per_route_chart():
     route_sales_monthly = df.groupby(["route","inv_month"],as_index=False)["total_price"].sum()
     left_chart, right_chart = st.columns(2)
     with left_chart:
-        st.header(":blue[Route KPIs]", divider="gray")
+        st.header(":blue[Route KPIs]")
         st.subheader(f"Route Value: $ {estimated_value:,}")
 
         st.subheader(f"Total Sales: $ {total_sales:,}")
@@ -22,7 +22,8 @@ def sales_per_route_chart():
     with right_chart:
         fig_monthly_sales = px.line(route_sales_monthly, x="inv_month", y="total_price", title="Monthly Sales", color="route", line_shape="linear", render_mode="svg")
         st.plotly_chart(fig_monthly_sales)
-
+    st.markdown("---")
+    
 def monthly_sales_and_top_customers_chart():
     df = create_pandas_dataframe()
     route_sales = df.groupby("route")[["total_price"]].sum()
@@ -36,7 +37,6 @@ def monthly_sales_and_top_customers_chart():
         fig_top_customers = px.bar(top_customers,x=top_customers.index,y="total_price",color="total_price",labels={"total_price": "Total Sales"},title="Top Customers")
         fig_top_customers.update_xaxes(title_text="Customer")
         st.plotly_chart(fig_top_customers)
-    st.markdown("---")
 
 if __name__ == "__main__":
     sales_per_route_chart()
