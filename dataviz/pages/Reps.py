@@ -34,7 +34,7 @@ def rep_kpi_metrics(df):
         tabular_metrics.columns = ["Month", "Sales", "Payments", "Orders"]
         result_df = tabular_metrics.pivot_table(index=None, values=['Sales', 'Payments', 'Orders'], columns='Month', aggfunc='sum')
         st.write(result_df)
-        
+
     st.markdown("---")
 
 def sales_payments_trend_chart(df):
@@ -46,18 +46,14 @@ def sales_payments_trend_chart(df):
         fig_sales_payments.update_xaxes(title_text="Month")
         fig_sales_payments.update_yaxes(title_text="Sales / Payments")
         fig_sales_payments.update_layout(plot_bgcolor="rgba(0,0,0,0)", xaxis=(dict(showgrid=False)))
-        st.plotly_chart(fig_sales_payments)    
+        st.plotly_chart(fig_sales_payments)
 
     with right_col:
         fig_invoice_trend = px.bar(order_trend,x=order_trend.index,y="invoice_number",color='invoice_number',labels={'invoice_number':'Invoice Count'},title="Orders Trend")
         fig_invoice_trend.update_xaxes(title_text="Month")
         st.plotly_chart(fig_invoice_trend)
 
-
 if __name__ == "__main__":
     select_df = rep_selection()
     rep_kpi_metrics(select_df)
     sales_payments_trend_chart(select_df)
-
-
-
