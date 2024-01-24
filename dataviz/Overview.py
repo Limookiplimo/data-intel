@@ -42,11 +42,13 @@ def create_pandas_dataframe():
     df = pd.DataFrame(data, columns=cols)
     df["invoice_date"] = pd.to_datetime(df["invoice_date"])
     df["payment_date"] = pd.to_datetime(df["payment_date"])
+    df.to_csv("./dataviz/retail.csv", index=False)
     return df
 
 st.cache_data() 
 def calculate_key_performance_indicators():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("retail.csv")
     total_sales = int(df["total_price"].sum())
     total_invoices = df["invoice_number"].count()
     total_payments = int(df["payment_amount"].sum())
@@ -74,7 +76,8 @@ def calculate_key_performance_indicators():
 
 st.cache_data() 
 def create_sales_payments_chart():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("retail.csv")
     sales_payments = df.groupby("inv_month")[["total_price", "payment_amount"]].sum()
     sales_payments.columns = ["Sales","Payments"]
     payments_pendings = df.groupby("pmt_month")[["payment_amount", "pending_payment"]].sum()

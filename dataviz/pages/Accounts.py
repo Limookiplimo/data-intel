@@ -1,12 +1,14 @@
 import streamlit as st
 import plotly.express as px
+import pandas as pd
 from Overview import create_pandas_dataframe
 
 st.set_page_config(layout="wide")
 st.markdown("<h2 style='text-align: center; color: green'> ABC Accounts</h1>", unsafe_allow_html=True)
 
 def accounts_kpis():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe() 
+    df = pd.read_csv("./retail.csv")
     total_sales = int(df["total_price"].sum())
     total_payments = int(df["payment_amount"].sum())
     collection_rate = round((total_payments / total_sales) * 100, 2)
@@ -27,7 +29,8 @@ def accounts_kpis():
     st.markdown("---")
 
 def payments_charts():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe() 
+    df = pd.read_csv("./retail.csv")
     payment_trend = df.groupby("inv_month")[["payment_amount"]].sum()
     sales_payments = df.groupby("inv_month")[["payment_amount","pending_payment"]].sum()
     sales_payments.columns = ["Collected", "Pending"]

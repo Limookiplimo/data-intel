@@ -1,11 +1,13 @@
 import streamlit as st
 import plotly.express as px
+import pandas as pd
 from Overview import create_pandas_dataframe
 st.set_page_config(layout="wide")
 st.markdown("<h2 style='text-align: center; color: green'> ABC Customers</h1>", unsafe_allow_html=True)
 
 def customer_selection():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("./retail.csv")
     customer_df = df.groupby(["crm", "inv_month"], as_index=False)[["total_price", "payment_amount","invoice_number"]].sum()
     customer_choice = customer_df["crm"].unique()
     default_customer = ["CRM001"]

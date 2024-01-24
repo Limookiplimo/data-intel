@@ -1,11 +1,13 @@
 import streamlit as st
 import plotly.express as px
+import pandas as pd
 from Overview import create_pandas_dataframe
 st.set_page_config(layout="wide")
 st.markdown("<h2 style='text-align: center; color: green'> ABC Trading Routes</h1>", unsafe_allow_html=True)
 
 def sales_per_route_chart():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("./retail.csv")
     total_customers = df["crm"].count()
     estimated_value = 150000000
     total_sales = int(df["total_price"].sum())
@@ -25,7 +27,8 @@ def sales_per_route_chart():
     st.markdown("---")
     
 def monthly_sales_and_top_customers_chart():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("./retail.csv")
     route_sales = df.groupby("route")[["total_price"]].sum()
     top_customers = df.groupby("crm")[["total_price"]].sum().nlargest(10, "total_price")
     left_chart, right_chart = st.columns(2)

@@ -1,11 +1,13 @@
 import streamlit as st
 import plotly.express as px
+import pandas as pd
 from Overview import create_pandas_dataframe
 st.set_page_config(layout="wide")
 st.markdown("<h2 style='text-align: center; color: green'> ABC Sales Representatives</h1>", unsafe_allow_html=True)
 
 def rep_selection():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("./retail.csv")
     rep_df = df.groupby(["rep_name","inv_month"], as_index=False).agg({"total_price":"sum","payment_amount":"sum","invoice_number":"count","route":"count"}).reset_index(drop=True)
     rep_choice = rep_df["rep_name"].unique()
     default_rep = ["Rep One"]

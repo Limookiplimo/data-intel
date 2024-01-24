@@ -1,12 +1,14 @@
 import streamlit as st
 import plotly.express as px
+import pandas as pd
 from Overview import create_pandas_dataframe
 
 st.set_page_config(layout="wide")
 st.markdown("<h2 style='text-align: center; color: green'> ABC Logistics</h1>", unsafe_allow_html=True)
 
 def logistics_kpis():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("./retail.csv")
     logistics_df = df.groupby(["vehicle"],as_index=False).agg({"total_weight":"sum","invoice_number":"count"})
     logistics_df.columns = ["Vehicle","Weight","Deliveries"]
 
@@ -25,7 +27,8 @@ def logistics_kpis():
     st.markdown("---")
 
 def logistics_charts():
-    df = create_pandas_dataframe()
+    # df = create_pandas_dataframe()
+    df = pd.read_csv("./retail.csv")
     tonnage_month = df.groupby("pmt_month")[["total_weight"]].sum()
     tonnage_vehicle = df.groupby(["vehicle", "pmt_month"], as_index=False)["total_weight"].sum()
     tonnage_vehicle.columns = ["Vehicles","Month","Weight"]
