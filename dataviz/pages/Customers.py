@@ -24,15 +24,15 @@ def customer_kpi_metrics(df):
     left_col, right_col = st.columns(2)
     with left_col:
         st.header(":blue[Customer KPIs]")
-        st.subheader(f"Total Sales: $ {total_sales:,}")
+        st.subheader(f"Sales: $ {total_sales:,}")
         st.subheader(f"Payments: $ {total_payments:,}")
-        st.subheader(f"Total Invoices: {total_invoices:,}")
+        st.subheader(f"Invoices: {total_invoices:,}")
 
     with right_col:
         st.subheader(":blue[Metrics Table]")
-        tabular_metrics = df.groupby(['inv_month'], as_index=False).agg({'total_price': 'sum','payment_amount': 'sum','invoice_number': 'count'}).reset_index(drop=True)
+        tabular_metrics = df.groupby(["inv_month"], as_index=False).agg({"total_price":"sum","payment_amount":"sum","invoice_number":"count"}).reset_index(drop=True)
         tabular_metrics.columns = ["Month", "Sales", "Payments", "Invoices"]
-        result_df = tabular_metrics.pivot_table(index=None, values=['Sales', 'Payments', 'Invoices'], columns='Month', aggfunc='sum')
+        result_df = tabular_metrics.pivot_table(index=None, values=["Sales", "Payments", "Invoices"], columns="Month", aggfunc="sum")
         st.write(result_df)
 
     st.markdown("---")
@@ -40,16 +40,17 @@ def customer_kpi_metrics(df):
 def customer_purchase_sales_chart(df):
     invoice_trend = df.groupby("inv_month")[["invoice_number"]].count()
     sales_payments = df.groupby("inv_month")[["total_price", "payment_amount"]].sum()
+    sales_payments.columns = ["Sales", "Payments"]
     left_col, right_col = st.columns(2)
     with left_col:
-        fig_invoice_trend = px.bar(invoice_trend,x=invoice_trend.index,y="invoice_number",color='invoice_number',labels={'invoice_number':'Invoice Count'},title="Purchase Trend")
+        fig_invoice_trend = px.bar(invoice_trend,x=invoice_trend.index,y="invoice_number",color="invoice_number",labels={"invoice_number":"Quantity"},title="Purchase Trend")
         fig_invoice_trend.update_xaxes(title_text="Month")
         st.plotly_chart(fig_invoice_trend)
 
     with right_col:
-        fig_sales_payments = px.line(sales_payments, x=sales_payments.index, y=["total_price", "payment_amount"], title="Sales & Payments",line_shape="linear", render_mode="svg")
+        fig_sales_payments = px.line(sales_payments, x=sales_payments.index, y=["Sales", "Payments"], title="Total Sales vs Total Payments",line_shape="linear", render_mode="svg", labels={"variable": "Sales vs Payments"})
         fig_sales_payments.update_xaxes(title_text="Month")
-        fig_sales_payments.update_yaxes(title_text="Sales / Payments")
+        fig_sales_payments.update_yaxes(title_text="Amount")
         fig_sales_payments.update_layout(plot_bgcolor="rgba(0,0,0,0)", xaxis=(dict(showgrid=False)))
         st.plotly_chart(fig_sales_payments)
 
